@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+   <meta charset="utf-8">
+   <title>Transparent Login Form HTML CSS</title>
+   <link rel="stylesheet" href="index.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+
+<body>
+   <div class="bg-img">
+      <div class="content">
+         <header>Login</header>
+         <form action="#" name="myForm" method="post">
+            <div class="field">
+               <span class="fa fa-user"></span>
+               <input type="email" placeholder="Email or Phone" required name="Email">
+            </div>
+            <div class="field space">
+               <span class="fa fa-lock"></span>
+               <input type="password" class="pass-key" required placeholder="Password" name="password">
+               <span class="show">SHOW</span>
+            </div>
+            <div class="pass">
+               <a href="#">Forgot Password?</a>
+            </div>
+            <div class="field">
+               <input type="submit" value="LOGIN" onclick="validateForm()">
+            </div>
+         </form>
+         <div class="login">
+            Or login with
+         </div>
+         <div class="links">
+            <div class="facebook">
+               <i class="fab fa-facebook-f"><span>Facebook</span></i>
+            </div>
+            <div class="instagram">
+               <i class="fab fa-instagram"><span>Instagram</span></i>
+            </div>
+         </div>
+         <div class="signup">
+            Don't have account?
+            <a class="sign" onclick="sign()">Signup Now</a>
+         </div>
+      </div>
+   </div>
+
+   </div>
+   <div class="sign-up">
+      <div class="content1">
+         <header style="font-size: 35px;">Sign Up</header>
+         <div class="field space">
+            <span class="fa fa-user"></span>
+            <form name="myForm">
+               <input type="text" required placeholder="Your First Name" name="fname">
+         </div>
+         <div class="field space">
+            <span class="fa fa-user"></span>
+            <input type="text" required placeholder="Your Last Name" name="lname">
+         </div>
+         <div class="field space">
+            <span class="fa fa-mail-bulk"></span>
+            <input type="text" required placeholder="Email" name="Email">
+         </div>
+         <div class="field space">
+            <span class="fa fa-lock"></span>
+            <input type="password" required placeholder="Password" class="pass-key2" name="password">
+         </div>
+
+         <div class="field space">
+            <span class="fa fa-lock"></span>
+            <input type="password" class="pass-key1" placeholder="Confirm Password" required name="password">
+            <span class="show1">SHOW</span>
+         </div>
+
+         <button class="submitBtn">
+
+            <div>Submit</div>
+         </button>
+         </form>
+      </div>
+   </div>
+   </div>
+
+   <script>
+      const pass_field = document.querySelector('.pass-key');
+      const showBtn = document.querySelector('.show');
+      showBtn.addEventListener('click', function () {
+         if (pass_field.type == "password") {
+            pass_field.type = "text";
+            showBtn.textContent = "HIDE";
+            showBtn.style.color = "#3498db";
+
+         }
+         else {
+            pass_field.type = "password";
+            showBtn.textContent = "show";
+            showBtn.style.color = "#222";
+         }
+      });
+      let pass=document.querySelector('.pass-key1');
+      let pass1=document.querySelector('.pass-key2');
+      let btn=document.querySelector('.show1'); 
+btn.addEventListener('click',function()
+{
+
+
+if(pass.type=="password")
+{
+   pass.type="text";
+   pass1.type="text";
+   btn.textContent="HIDE";
+   btn.style.color="#3498db";
+}
+else
+{
+   pass.type="password";
+   pass1.type="password";
+   btn.textContent="SHOW";
+   btn.style.color="#222";
+}
+
+});
+      function validateForm() {
+         let x = document.forms["myForm"]["Email"].value;
+         if (x == "") {
+            alert("Fill the form correctly");
+         }
+         else {
+            alert("Success");
+         }
+      }
+
+      const passing = document.querySelector('.content');
+      const passing2 = document.querySelector('.sign-up');
+      function sign() {
+         if (passing2.style.visibility = "inherit") {
+            passing2.style.visibility = "inherit";
+            passing.style.visibility = "hidden";
+         }
+         else {
+            passing2.style.visibility = "hidden";
+         }
+      }
+
+   </script>
+</body>
+
+</html>
